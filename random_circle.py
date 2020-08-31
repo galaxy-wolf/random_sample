@@ -1,9 +1,12 @@
 import matplotlib.pyplot as plt
 import random
+import math
 fig, ax = plt.subplots()
 
 def random_sample_circle_inverse_cdf():
-    return (0, 0)
+    r = math.sqrt(random.random())
+    theta = random.random() * 2 * math.pi
+    return (math.sin(theta) * r, math.cos(theta) * r)
 
 def random_sample_square():
     return [random.random()*2.0-1, random.random()*2.0-1]
@@ -27,7 +30,8 @@ NUM = 1000
 plist = []
 for i in xrange(0, NUM):
     # plist.append(random_sample_square())
-    plist.append(random_sample_circle_reject())
+    # plist.append(random_sample_circle_reject())
+    plist.append(random_sample_circle_inverse_cdf())
 plt.plot(*zip(*plist), marker='o', color='r', ls='', markersize=2)
 
 plt.show()
