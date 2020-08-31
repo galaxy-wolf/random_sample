@@ -18,10 +18,10 @@ a_circle = plt.Circle((0, 0), 1.0)
 ax.add_artist(a_circle)
 ax.set_aspect('equal', adjustable='datalim')
 
-NUM = 10
+NUM = 1000
 plist = []
 for i in xrange(0, NUM):
     plist.append(random_sample_square())
-plt.plot(*zip(*plist), color='r')
+plt.plot(*zip(*plist), marker='o', color='r', ls='', markersize=2)
 
 plt.show()
